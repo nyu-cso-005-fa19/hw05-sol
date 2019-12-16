@@ -139,7 +139,9 @@ different and will be stored at cache indices 0x00, 0x10=16, ..., 0xF0=240. At
 `i=16`, the loop accesses a[16][0] whose cache line will again be
 stored at index 0x00, replacing the cache line for a[0][0], at `i=17` it
 accesses a[17][0] which will be stored again at index 0x10=16, replacing
-the cache line for a[1][0], and so forth.
+the cache line for a[1][0], and so forth. By the time `i=32`, all the
+cache lines loaded in the first 16 iterations have been replaced,
+without a single cache hit. The whole process then just repeats.
 
 Only when we can iterate over the inner loop completely without
 replacing any cache lines will `sumB` have the same cache behavior as
