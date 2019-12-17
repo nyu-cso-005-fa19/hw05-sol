@@ -97,11 +97,11 @@
 
 3. Tag: 0b10001010
 
-   Set index: 0b110
+   Set index: 0b111
    
    Block offset: 0x01
    
-   Address: 0b10001010 110 01 = 0x1159
+   Address: 0b10001010 111 01 = 0x115D
 
 ## Problem 3
 
