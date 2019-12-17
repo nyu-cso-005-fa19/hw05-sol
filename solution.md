@@ -1,12 +1,12 @@
 ## Problem 1
 
-1. a. VPN: 5-13
+1. a. VPN: 5-12
 
-   b. PTO: 0-5
+   b. PTO: 0-4
    
-   c. TLB set index: 6-7
+   c. TLB set index: 4-6
    
-   d. TLB tag: 8-13
+   d. TLB tag: 7-12
    
 2. a. Virtual address: 0x027C
 
