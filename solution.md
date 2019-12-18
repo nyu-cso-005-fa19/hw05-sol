@@ -148,12 +148,18 @@ replacing any cache lines will `sumB` have the same cache behavior as
 `sumA`. Thus, let's determine the maximum `N` for which this is
 possible. For this, we have to maximize `N` subject to
 
-`N x N x 4 / 16 <= 256`
+`(N - 1) * N * 4 / 16 < 256`
 
-which yields `N=32`. Hence, for `N<=32`, the cache hit ratio for
-`sumB` will also be 1/4. For, `N=33` it will be greater than
-1/4. Hence, `N=33` is the smallest value of `N` for which `sumA` and
-`sumB` have different cache miss ratios.
+Here, `(N - 1) * N * 4` is the relative offset of `a[N - 1][0]` from
+the beginning of the array. Dividing this by 16 gives the cache line
+number of the cache line starting at that address (before taking it
+modulo 256). This inequality thus encodes the condition under which
+the first cache line of every row is mapped to a unique cache index.
+
+Maximizing `N` subject to this condition yields `N=32`. Hence, for
+`N<=32`, the cache hit ratio for `sumB` will also be 1/4. For, `N=33`
+it will be greater than 1/4. Hence, `N=33` is the smallest value of
+`N` for which `sumA` and `sumB` have different cache miss ratios.
 
 ## Problem 4
 
